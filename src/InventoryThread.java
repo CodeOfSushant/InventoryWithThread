@@ -33,7 +33,7 @@ public class InventoryThread {
                        Inventory item = new Inventory( rs.getString("Product_Name"), rs.getString("Product_Type"), rs.getDouble("Product_Price"));
                        rawItems.put(item); // Stores in-memory object in shared collection
                     }
-                    rawItems.put(POISON_PILL); // Signal consumer to stop
+                    rawItems.put(POISON_PILL); // Signalt o stop
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -47,6 +47,7 @@ public class InventoryThread {
                         if (item == POISON_PILL) {
                             break;
                         }
+                        // Calculate tax and update attribute
                         String name = item.getProductName();
                         String type = item.getProductType();
                         double price = item.getProductPrice();
@@ -79,7 +80,6 @@ public class InventoryThread {
                             double impSalesTax = InventoryTax.calSalesTax(tax,price,10);
                             tax = impSalesTax;
                         }
-                        // Calculate 15% tax and update attribute
                         item.setTax(tax);
                         double finalPrice = price + tax;
                         item.setFinalPrice(finalPrice);
