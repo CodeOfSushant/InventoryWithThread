@@ -1,5 +1,5 @@
 # InventoryWithThread
-Inventory System using multithread to take data from myql db and caculate taxon Item.
+Product System using multithread to take data from myql db and caculate taxon Item.
 # REquired 
 Mysql DB setup.
 Database created with a required Table structure.
