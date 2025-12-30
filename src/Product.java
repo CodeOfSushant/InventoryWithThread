@@ -1,28 +1,27 @@
-public class Inventory {
+public class Product {
     protected String productName;
-
     protected String productType;
     protected double productPrice;
     protected double tax;
     protected double finalPrice;
 
     // Constructor to initiate values to object.
-    public Inventory(String productName,String productType, double productPrice){
+    public Product(String productName, String productType, double productPrice) {
         this.productName = productName;
         this.productType = productType;
         this.productPrice = productPrice;
     }
 
-    public String getProductName(){
+    public String getProductName() {
 
         return productName;
     }
 
-    public String getProductType(){
+    public String getProductType() {
         return productType;
     }
 
-    public double getProductPrice(){
+    public double getProductPrice() {
 
         return productPrice;
     }
@@ -31,7 +30,7 @@ public class Inventory {
         this.tax = tax;
     }
 
-    public void setFinalPrice(double finalPrice){
+    public void setFinalPrice(double finalPrice) {
         this.finalPrice = finalPrice;
     }
 
